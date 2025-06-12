@@ -7,8 +7,8 @@ Aplikasi sistem kunci otomatis berbasis Android dengan keamanan enkripsi AES.
 1.  **Clone Repository**
 
     ```bash
-    git clone [https://github.com/USERNAME/saf-e-locker.git](https://github.com/USERNAME/saf-e-locker.git)
-    cd saf-e-locker
+    git clone https://github.com/Saannrr/saf-e-locker-flutter.git
+    cd saf-e-locker-flutter
     ```
 
 2.  **Dapatkan File Konfigurasi**
