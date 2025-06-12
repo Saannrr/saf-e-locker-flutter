@@ -1,16 +1,36 @@
-# saf_e_locker
+# Proyek Skripsi: SAF-E LOCKER
 
-A new Flutter project.
+Aplikasi sistem kunci otomatis berbasis Android dengan keamanan enkripsi AES.
 
-## Getting Started
+## 🚀 Instruksi Setup untuk Developer
 
-This project is a starting point for a Flutter application.
+1.  **Clone Repository**
 
-A few resources to get you started if this is your first Flutter project:
+    ```bash
+    git clone [https://github.com/USERNAME/saf-e-locker.git](https://github.com/USERNAME/saf-e-locker.git)
+    cd saf-e-locker
+    ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2.  **Dapatkan File Konfigurasi**
+    Proyek ini menggunakan Firebase. Anda memerlukan file konfigurasi berikut yang tidak disimpan di dalam repository Git. **Minta file-file ini dari anggota tim lain:**
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+    - `google-services.json`
+    - `lib/firebase_options.dart`
+
+3.  **Tempatkan File Konfigurasi**
+    Letakkan file yang sudah Anda dapatkan di lokasi berikut:
+
+    - Taruh `google-services.json` di dalam direktori `android/app/`.
+    - Taruh `firebase_options.dart` di dalam direktori `lib/`.
+
+4.  **Instal Dependensi**
+
+    ```bash
+    flutter pub get
+    ```
+
+5.  **Jalankan Aplikasi**
+    Pastikan emulator atau perangkat fisik sudah terhubung, lalu jalankan:
+    ```bash
+    flutter run
+    ```
