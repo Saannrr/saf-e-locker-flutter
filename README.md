@@ -22,6 +22,7 @@ Aplikasi sistem kunci otomatis berbasis Android dengan keamanan enkripsi AES.
 
     - Taruh `google-services.json` di dalam direktori `android/app/`.
     - Taruh `firebase_options.dart` di dalam direktori `lib/`.
+    - Taruh `GoogleService-Info.plist` di dalam direktori `/ios/Runner/`.
 
 4.  **Instal Dependensi**
 
