@@ -1,0 +1,55 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+
+# Flutter/Dart
+.dart_tool/
+.packages
+build/
+pubspec.lock
+
+# Android
+/android/local.properties
+/android/.gradle/
+/android/app/src/main/assets/flutter_assets/*
+!/android/app/src/main/assets/flutter_assets/AssetManifest.json
+!/android/app/src/main/assets/flutter_assets/FontManifest.json
+!/android/app/src/main/assets/flutter_assets/NOTICES.Z
+
+# iOS
+/ios/Pods/
+/ios/Runner/Assets.xcassets/AppIcon.appiconset/*
+!/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
+/ios/Flutter/App.framework
+/ios/Flutter/engine.version
+/ios/Flutter/flutter_assets/*
+!/ios/Flutter/flutter_assets/AssetManifest.json
+!/ios/Flutter/flutter_assets/FontManifest.json
+!/ios/Flutter/flutter_assets/NOTICES.Z
+/ios/.symlinks/
+/ios/Runner.xcworkspace/
+/ios/Runner.xcodeproj/project.xcworkspace/
+/ios/Runner.xcodeproj/xcuserdata/
+
+# VS Code
+.vscode/
+
+# IntelliJ
+.idea/
+
+# Windows
+Thumbs.db
+
+# SENSITIVE FILES - JANGAN PERNAH DI UPLOAD
+# Tambahkan baris ini jika file-file tersebut ada di proyek Anda
+/android/app/google-services.json
+/ios/Runner/GoogleService-Info.plist
+/lib/firebase_options.dart
+*.env
