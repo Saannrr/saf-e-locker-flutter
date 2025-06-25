@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class NoLockerFoundSheet extends StatelessWidget {
   final VoidCallback onTryAgain;
-  const NoLockerFoundSheet({Key? key, required this.onTryAgain}) : super(key: key);
+  const NoLockerFoundSheet({super.key, required this.onTryAgain});
 
   @override
   Widget build(BuildContext context) {

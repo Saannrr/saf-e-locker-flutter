@@ -1,4 +1,4 @@
-// lib/screens/register_screen.dart (NEW FILE)
+// lib/screens/register_screen.dart
 
 import 'package:flutter/material.dart';
 
@@ -25,10 +25,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 
   void _register() {
-    // Validate the form
     if (_formKey.currentState!.validate()) {
-      // If valid, proceed with registration (e.g., call Firebase)
-      // For now, we'll just pop the screen to return to login
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Registration Successful!')),
       );
@@ -42,8 +39,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
       appBar: AppBar(
         title: const Text('Create Account'),
         centerTitle: true,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24.0),
@@ -53,7 +48,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const SizedBox(height: 20),
-              // Username
               TextFormField(
                 controller: _usernameController,
                 decoration: const InputDecoration(labelText: 'Username'),
@@ -65,7 +59,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 },
               ),
               const SizedBox(height: 16),
-              // Email
               TextFormField(
                 controller: _emailController,
                 decoration: const InputDecoration(labelText: 'Email (unique)'),
@@ -74,7 +67,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   if (value == null || value.isEmpty) {
                     return 'Please enter an email';
                   }
-                  // Basic email validation
                   if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value)) {
                     return 'Please enter a valid email address';
                   }
@@ -82,7 +74,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 },
               ),
               const SizedBox(height: 16),
-              // Password
               TextFormField(
                 controller: _passwordController,
                 obscureText: _isPasswordObscured,

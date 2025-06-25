@@ -12,7 +12,7 @@ class ControlCard extends StatelessWidget {
   final String stateOffText;
 
   const ControlCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.state,
     required this.onToggle,
@@ -22,7 +22,7 @@ class ControlCard extends StatelessWidget {
     this.inactiveColor,
     this.stateOnText = 'ON',
     this.stateOffText = 'OFF',
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -65,13 +65,13 @@ class ControlCard extends StatelessWidget {
               SizedBox(height: 16),
               ElevatedButton(
                 onPressed: onToggle,
-                child: Text(currentButtonText),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: currentButtonColor,
                   foregroundColor: Colors.white, // Warna teks tombol
                   padding: EdgeInsets.symmetric(horizontal: 30, vertical: 12),
                   textStyle: TextStyle(fontSize: 16),
                 ),
+                child: Text(currentButtonText),
               ),
             ],
           ),

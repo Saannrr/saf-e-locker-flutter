@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class PaymentSuccessSheet extends StatelessWidget {
   final VoidCallback onDone;
-  const PaymentSuccessSheet({Key? key, required this.onDone}) : super(key: key);
+  const PaymentSuccessSheet({super.key, required this.onDone});
 
   @override
   Widget build(BuildContext context) {

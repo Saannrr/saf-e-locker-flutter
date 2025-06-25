@@ -26,7 +26,7 @@ class AuthService {
         print('Failed to sign in: ${e.message} (Code: ${e.code})');
       }
       // Anda bisa melempar custom exception atau mengembalikan null/pesan error
-      throw e; // Biarkan UI menangani error spesifik jika perlu
+      rethrow; // Biarkan UI menangani error spesifik jika perlu
     }
   }
 
@@ -50,7 +50,7 @@ class AuthService {
       if (kDebugMode) {
         print('Failed to sign up: ${e.message} (Code: ${e.code})');
       }
-      throw e;
+      rethrow;
     }
   }
 

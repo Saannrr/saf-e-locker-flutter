@@ -47,12 +47,12 @@ class _LockerFoundSheetState extends State<LockerFoundSheet> {
         children: [
           const Text(
             'We found a\nlocker!',
-            style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.black54),
           ),
           const SizedBox(height: 8),
           const Text(
             'Next, choose how many hours\nfor your locker.',
-            style: TextStyle(fontSize: 16, color: Colors.grey),
+            style: TextStyle(fontSize: 16, color: Colors.black54),
           ),
           const SizedBox(height: 24),
           Container(
@@ -67,7 +67,7 @@ class _LockerFoundSheetState extends State<LockerFoundSheet> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     _buildControlButton(Icons.remove, _subtractHour),
-                    Text('$_hours', style: const TextStyle(fontSize: 80, fontWeight: FontWeight.bold)),
+                    Text('$_hours', style: const TextStyle(fontSize: 80, fontWeight: FontWeight.bold, color: Colors.black54)),
                     _buildControlButton(Icons.add, _addHour),
                   ],
                 ),
@@ -78,8 +78,8 @@ class _LockerFoundSheetState extends State<LockerFoundSheet> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                       Text('Price: ${_formatCurrency(_pricePerHour)}/Hour', style: const TextStyle(fontSize: 16)),
-                       Text('Total: ${_formatCurrency(totalPrice)}', style: const TextStyle(fontSize: 16)),
+                       Text('Price: ${_formatCurrency(_pricePerHour)}/Hour', style: const TextStyle(fontSize: 16, color: Colors.black54)),
+                       Text('Total: ${_formatCurrency(totalPrice)}', style: const TextStyle(fontSize: 16, color: Colors.black54)),
                     ],
                   ),
                 ),

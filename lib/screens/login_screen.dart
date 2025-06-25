@@ -1,4 +1,4 @@
-// lib/screens/login_screen.dart (NEW FILE)
+// lib/screens/login_screen.dart
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +11,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  // These controllers are kept for the UI but not used for login logic yet
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   bool _isPasswordObscured = true;
@@ -22,10 +23,12 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
   
-  void _login() {
-    // In a real app, you would validate credentials here.
-    // For now, we'll navigate directly to the welcome screen.
+  void _loginAsUser() {
     Navigator.pushReplacementNamed(context, '/welcome');
+  }
+  
+  void _loginAsAdmin() {
+      Navigator.pushReplacementNamed(context, '/admin');
   }
 
   @override
@@ -37,33 +40,15 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              const SizedBox(height: 40),
-              // App Title
+              const SizedBox(height: 80), // Added space at the top
               const Text(
-                'Welcome Back',
+                'Saf-e Locker',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 8),
-              const Text(
-                'Login to your account',
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 16, color: Colors.grey),
-              ),
               const SizedBox(height: 40),
-
-              // Social Login Buttons
-              _buildSocialButton('Continue with Google', 'assets/google_icon.png'),
-              const SizedBox(height: 12),
-              _buildSocialButton('Continue with Facebook', 'assets/facebook_icon.png'),
-              const SizedBox(height: 12),
-              _buildSocialButton('Continue with X', 'assets/x_icon.png'),
-
-              const SizedBox(height: 24),
-              _buildDivider(),
-              const SizedBox(height: 24),
               
-              // Email and Password Fields
+              // Non-functional text fields as per request
               TextField(
                 controller: _emailController,
                 decoration: const InputDecoration(labelText: 'Email'),
@@ -89,14 +74,22 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 32),
               
-              // Login Button
+              // Demo Login Buttons
               ElevatedButton(
-                onPressed: _login,
-                child: const Text('Login'),
+                onPressed: _loginAsUser,
+                child: const Text('Login as User'),
+              ),
+              const SizedBox(height: 12),
+              ElevatedButton(
+                onPressed: _loginAsAdmin,
+                 style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blueGrey[800],
+                  foregroundColor: Colors.white,
+                ),
+                child: const Text('Login as Admin'),
               ),
               const SizedBox(height: 24),
 
-              // Registration Link
               Center(
                 child: RichText(
                   text: TextSpan(
@@ -123,36 +116,6 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
       ),
-    );
-  }
-
-  // Helper for social login buttons (Firebase OAuth would be implemented here)
-  Widget _buildSocialButton(String text, String iconPath) {
-    return OutlinedButton.icon(
-      icon: Image.asset(iconPath, height: 20.0, width: 20.0), // Placeholder
-      onPressed: () { /* Handle social login */ },
-      label: Text(text),
-      style: OutlinedButton.styleFrom(
-        foregroundColor: Colors.black,
-        padding: const EdgeInsets.symmetric(vertical: 12),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-      ),
-    );
-  }
-
-  // Helper for OR divider
-  Widget _buildDivider() {
-    return const Row(
-      children: [
-        Expanded(child: Divider()),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8.0),
-          child: Text('OR', style: TextStyle(color: Colors.grey)),
-        ),
-        Expanded(child: Divider()),
-      ],
     );
   }
 }

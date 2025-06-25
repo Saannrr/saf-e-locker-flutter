@@ -1,7 +1,9 @@
+// lib/widgets/terminate_dialog.dart
+
 import 'package:flutter/material.dart';
 
 class TerminateDialog extends StatelessWidget {
-  const TerminateDialog({Key? key}) : super(key: key);
+  const TerminateDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,14 +14,15 @@ class TerminateDialog extends StatelessWidget {
       actions: [
         TextButton(
           onPressed: () {
-            Navigator.of(context).pop();
+            // Send 'false' back when Cancel is tapped
+            Navigator.of(context).pop(false);
           },
           child: const Text('Cancel', style: TextStyle(color: Colors.grey)),
         ),
         TextButton(
           onPressed: () {
-            // In a real app, handle termination logic here.
-            Navigator.of(context).pop();
+            // Send 'true' back when Confirm is tapped
+            Navigator.of(context).pop(true);
           },
           child: const Text('Confirm', style: TextStyle(color: Colors.red)),
         ),

@@ -11,7 +11,7 @@ class StatusCard extends StatelessWidget {
   final Color notDetectedColor;
 
   const StatusCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.isDetected,
     required this.icon,
@@ -20,7 +20,7 @@ class StatusCard extends StatelessWidget {
     this.statusNotDetectedText = 'Not Detected',
     this.detectedColor = Colors.red,
     this.notDetectedColor = Colors.green,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

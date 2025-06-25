@@ -1,10 +1,11 @@
+// lib/widgets/qr_scan_sheet.dart
 
 import 'dart:async';
 import 'package:flutter/material.dart';
 
 class QrScanSheet extends StatefulWidget {
   final VoidCallback onSuccess;
-  const QrScanSheet({Key? key, required this.onSuccess}) : super(key: key);
+  const QrScanSheet({super.key, required this.onSuccess});
 
   @override
   State<QrScanSheet> createState() => _QrScanSheetState();
@@ -28,10 +29,13 @@ class _QrScanSheetState extends State<QrScanSheet> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Text(
+          Text(
             'Scan the QR\ncode to pay',
             textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+            // FIX: Applying a style from the theme that we know is black.
+            style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+              fontWeight: FontWeight.bold,
+            ),
           ),
           const SizedBox(height: 40),
           AspectRatio(
@@ -47,7 +51,13 @@ class _QrScanSheetState extends State<QrScanSheet> {
             ),
           ),
           const SizedBox(height: 40),
-          const Text('00:00', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+          Text(
+            '00:00',
+            // FIX: Applying another style from the theme.
+            style: Theme.of(context).textTheme.displaySmall?.copyWith(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ],
       ),
     );
